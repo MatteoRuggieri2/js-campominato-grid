@@ -56,12 +56,21 @@ footer{
     border: 2px solid black;
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start;
-    align-content: flex-start;
+    align-content: space-around;
 }
 
 .square{
     border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.square span {
+    display: none;
+}
+.square.active span {
+    display: inline-block;
 }
 
 .square-10{
