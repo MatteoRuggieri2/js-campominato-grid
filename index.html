@@ -10,26 +10,30 @@
 </head>
 <body>
     
-    <!-- APP -->
+    <!-- APP CONTAINER -->
     <div class="app-container">
 
         <!-- HEADER -->
         <header>
 
-            <!-- Left -->
+            <!-- Header Left -->
             <div class="header-left">
                 <img src="img/logo.png" alt="logo">
                 <h1>Campo minato: la griglia</h1>
             </div>
 
-            <!-- Right -->
+            <!-- Header Right -->
             <div class="header-right">
+
+                <!-- Select -->
                 <label for="choice">Difficoltà:</label>
-                <select name="choice" id="choice">
-                    <option value="facile">facile</option>
-                    <option value="medio">medio</option>
-                    <option value="difficile">difficile</option>
+                <select class="choice-list" name="choice" id="choice">
+                    <option value="easy">facile</option>
+                    <option value="hard">medio</option>
+                    <option value="crazy">difficile</option>
                 </select>
+
+                <!-- Play Button -->
                 <input type="button" value="play">
             </div>
         </header>
@@ -44,7 +48,7 @@
                 <div class="square square-7">
                     <span></span>
                 </div>
-                
+
             </div>
         </main>
 
