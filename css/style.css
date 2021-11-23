@@ -19,6 +19,9 @@ header{
 main{
     height: calc(100% - 170px);
     background-color: #7fffd4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 footer{
@@ -44,4 +47,34 @@ footer{
 
     /* test */
     background-color: darkcyan;
+}
+
+/* MAIN */
+.grid{
+    width: 500px;
+    height: 500px;
+    border: 2px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+
+.square{
+    border: 2px solid black;
+}
+
+.square-10{
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+}
+
+.square-9{
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+}
+
+.square-7{
+    width: calc(100% / 7);
+    height: calc(100% / 7);
 }
