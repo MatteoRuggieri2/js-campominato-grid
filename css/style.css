@@ -4,3 +4,44 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+/* COMMON */
+.app-container{
+    width: 100%;
+    height: 100vh;
+}
+
+header{
+    height: 100px;
+    display: flex;
+}
+
+main{
+    height: calc(100% - 170px);
+    background-color: #7fffd4;
+}
+
+footer{
+    height: 70px;
+    display: flex;
+    align-items: center;
+}
+
+/* HEADER */
+.header-left{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    /* test */
+    background-color: cornflowerblue;
+}
+
+.header-right{
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    /* test */
+    background-color: darkcyan;
+}
