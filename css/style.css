@@ -64,13 +64,12 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
-.square span {
-    display: none;
-}
-.square.active span {
-    display: inline-block;
+.bkg-cyan{
+    background-color: #6495ed;
+    color: white;
 }
 
 .square-10{

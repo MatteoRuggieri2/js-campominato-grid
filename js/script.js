@@ -6,7 +6,7 @@
 // con difficoltà 3 => tra 1 e 49
 // Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro.
 
-
+// --------------------------------------
 
 let userChoice = '';
 document.getElementById("play-button").addEventListener("click", function() {
@@ -15,73 +15,54 @@ document.getElementById("play-button").addEventListener("click", function() {
     const grid = document.querySelector('.grid');
     grid.innerHTML = '';
 
-
+    // Scelgo la quantità di square e la loro grandezza 
+    // in base alla scelta dell'utente
     let squareSize = '';
     let squareQuantity = 0;
     if (userChoice == 'easy') {
-        squareSize = 'square-10';
+        squareSize = 'calc(100% / 10)';
         squareQuantity = 100;
 
     } else if (userChoice == 'hard') {
-        squareSize = 'square-9';
+        squareSize = 'calc(100% / 9)';
         squareQuantity = 81;
 
+
     } else if (userChoice == 'crazy') {
-        squareSize = 'square-7';
+        squareSize = 'calc(100% / 7)';
         squareQuantity = 49;
+        
     }
 
-    for (let i = 0; i < squareQuantity; i++) {
-        const numeri = generateRandomNumber(squareQuantity);
+    // Creo unnumero per ogni square
+    for (let i = 1; i <= squareQuantity; i++) {
+        let thisElement = i;
 
-        const newBox = `
-        <div class="square ${squareSize}">
-            <span>${numeri[i]}</span>
-        </div>
+        // Creo il tag div con dentro l'elemento square
+        const newBox= document.createElement('div');
+        newBox.classList.add('square');
+
+        // Do' la grandezza in base alla scelta (difficoltà)
+        newBox.style.width = squareSize;
+        newBox.style.height = squareSize;
+
+        // Inserisco il numero dentro lo square
+        newBox.innerHTML = `
+        <span>${thisElement}</span>
         `
-        grid.innerHTML += newBox
-        console.log(squareSize);
-    }
+        // Aggiungo gli square nella griglia
+        grid.appendChild(newBox);
 
+        // Aggiungo la classe del colore al click
+        newBox.addEventListener('click', function(){
+            newBox.classList.add('bkg-cyan');
+        })
+    }
 
 
 });
 
-
-
-
-
-// se sceglie facile metto quadrati s-10 e numeri da 1 e 100
-
-// se sceglie medio metto quadrati s-9 e numeri da 1 e 81
-
-// se sceglie difficile metto quadrati s-7 e numeri da 1 e 49
-
-
-
-
 // FUNCTION
-// Creo una funzione che mi da sotto forma di array numeri 
-// tra 1 e 100, tra 1 e 81, e tra 1 e 49 senza ripeterli
-
-
-
-// Questa funzione serve a generare una quantità di numeri
-// casuali scelti da noi tramite l'argomento, che non si ripetono mai.
-// return: fornisce un array contenente i numeri univoci
-function generateRandomNumber (quantity) {
-    const numbersArray = [];
-    while(numbersArray.length < quantity) {
-
-        const randomNumber = getRndInteger(1, quantity);
-        if (!numbersArray.includes(randomNumber)) {
-            numbersArray.push(randomNumber)
-        }
-
-    }
-    return numbersArray
-
-}
 
 // Questa funzione serve a generare numeri casuali da un min a un max 
 // (tutti e due compresi) che diamo noi come argomento.
@@ -89,7 +70,3 @@ function generateRandomNumber (quantity) {
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
-
-
-
-
