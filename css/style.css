@@ -26,6 +26,7 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 footer{
@@ -110,4 +111,16 @@ footer{
 .square-7{
     width: calc(100% / 7);
     height: calc(100% / 7);
+}
+
+main h2{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* utility class */
+.hidden{
+    display: none;
 }

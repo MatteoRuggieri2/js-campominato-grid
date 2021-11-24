@@ -13,7 +13,11 @@ document.getElementById("play-button").addEventListener("click", function() {
     // prendo la scelta di difficoltà dell'utente
     userChoice = document.querySelector('.choice-list').value;
     const grid = document.querySelector('.grid');
+    grid.classList.remove('hidden');
     grid.innerHTML = '';
+
+    const gameTitle = document.getElementById("game-title")
+    gameTitle.classList.add('hidden');
 
     // Scelgo la quantità di square e la loro grandezza 
     // in base alla scelta dell'utente
@@ -61,12 +65,3 @@ document.getElementById("play-button").addEventListener("click", function() {
 
 
 });
-
-// FUNCTION
-
-// Questa funzione serve a generare numeri casuali da un min a un max 
-// (tutti e due compresi) che diamo noi come argomento.
-// return: ci fornisce un numero
-function getRndInteger(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) ) + min;
-}
